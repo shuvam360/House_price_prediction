@@ -1,0 +1,32 @@
+{
+  "model_name": "LinearRegression",
+  "features": [
+    "OverallQual",
+    "GrLivArea",
+    "TotalBsmtSF",
+    "GarageCars",
+    "FullBath",
+    "YearBuilt"
+  ],
+  "medians": {
+    "OverallQual": 6.0,
+    "GrLivArea": 1464.0,
+    "TotalBsmtSF": 991.5,
+    "GarageCars": 2.0,
+    "FullBath": 2.0,
+    "YearBuilt": 1973.0
+  },
+  "intercept": -759894.3243911307,
+  "coefficients": {
+    "OverallQual": 20507.201279435718,
+    "GrLivArea": 51.99339781706155,
+    "TotalBsmtSF": 24.475399589402954,
+    "GarageCars": 15329.40853924235,
+    "FullBath": -5421.210340480879,
+    "YearBuilt": 350.9116719342842
+  },
+  "metrics": {
+    "r2_score": 0.7944,
+    "rmse": 39710.99
+  }
+}

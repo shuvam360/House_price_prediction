@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>House Price Predictor</title>
+  <!-- Google Font: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container">
+    <div class="main-card">
+
+      <!-- Header Section -->
+      <div class="header">
+        <div class="header-top">
+          <span class="header-icon">🏡</span>
+          <h1 class="title">House Price Predictor</h1>
+        </div>
+        <p class="subtitle">Enter house details below to estimate its market sale price.</p>
+      </div>
+
+      <!-- 2-Column Input Form -->
+      <div class="form-grid">
+
+        <!-- Column 1 -->
+        <div class="column">
+          <!-- Overall Quality -->
+          <div class="form-group">
+            <div class="label-wrap">
+              <label for="overall_qual">Overall Quality (1-10)</label>
+              <span class="val-badge" id="badge_qual">6 / 10</span>
+            </div>
+            <input type="range" id="overall_qual" min="1" max="10" step="1" value="6" />
+          </div>
+
+          <!-- Living Area -->
+          <div class="form-group" style="margin-top: 1rem;">
+            <div class="label-wrap">
+              <label for="gr_liv_area">Living Area (sq ft)</label>
+            </div>
+            <input type="number" id="gr_liv_area" min="300" max="10000" step="50" value="1500" />
+          </div>
+
+          <!-- Basement Area -->
+          <div class="form-group" style="margin-top: 1rem;">
+            <div class="label-wrap">
+              <label for="total_bsmt_sf">Basement Area (sq ft)</label>
+            </div>
+            <input type="number" id="total_bsmt_sf" min="0" max="5000" step="50" value="1000" />
+          </div>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="column">
+          <!-- Garage Capacity -->
+          <div class="form-group">
+            <div class="label-wrap">
+              <label for="garage_cars">Garage Capacity (cars)</label>
+              <span class="val-badge" id="badge_garage">2 cars</span>
+            </div>
+            <input type="range" id="garage_cars" min="0" max="4" step="1" value="2" />
+          </div>
+
+          <!-- Full Bathrooms -->
+          <div class="form-group" style="margin-top: 1rem;">
+            <div class="label-wrap">
+              <label for="full_bath">Full Bathrooms</label>
+              <span class="val-badge" id="badge_bath">2 full baths</span>
+            </div>
+            <input type="range" id="full_bath" min="0" max="4" step="1" value="2" />
+          </div>
+
+          <!-- Year Built -->
+          <div class="form-group" style="margin-top: 1rem;">
+            <div class="label-wrap">
+              <label for="year_built">Year Built</label>
+            </div>
+            <input type="number" id="year_built" min="1870" max="2025" step="1" value="2000" />
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Predict Button -->
+      <button id="btn_predict" class="btn-predict">
+        <span>✨</span> Predict price
+      </button>
+
+      <!-- Green Success Box (Result) -->
+      <div id="result_box" class="result-box">
+        <div class="result-title">Estimated Market Value</div>
+        <div class="result-price" id="result_price">$187,254</div>
+      </div>
+
+      <!-- Collapsible Viva Notes -->
+      <details class="viva-details">
+        <summary>📘 Viva Explanation: How this model works</summary>
+        <div class="viva-content">
+          <p>This model is trained using <strong>Multiple Linear Regression</strong> on the Kaggle Ames House Prices dataset with an 80/20 train/validation split.</p>
+          <div class="formula-code">
+            SalePrice = -759,894.32 + 20,507.20*(OverallQual) + 51.99*(GrLivArea) + 24.48*(TotalBsmtSF) + 15,329.41*(GarageCars) - 5,421.21*(FullBath) + 350.91*(YearBuilt)
+          </div>
+          <p style="margin-top: 0.4rem;">
+            Missing numeric values in the dataset were imputed using the column <strong>median</strong> to maintain robustness against extreme outliers.
+          </p>
+        </div>
+      </details>
+
+      <!-- Bottom Caption -->
+      <div class="caption-footer">
+        Model: LinearRegression | Validation R² Score: 0.7944
+      </div>
+
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
