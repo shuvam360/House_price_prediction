@@ -9,7 +9,7 @@
 // Backend API URL:
 // 1. If running locally on localhost/127.0.0.1, defaults to http://127.0.0.1:5000
 // 2. Once deployed on Render, put your Render URL below (e.g. "https://house-price-backend.onrender.com")
-const RENDER_BACKEND_URL = ""; 
+const RENDER_BACKEND_URL = "https://house-price-prediction-2h2l.onrender.com"; 
 
 const API_BASE_URL = RENDER_BACKEND_URL || (
   window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1"

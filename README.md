@@ -86,7 +86,7 @@ Open `http://localhost:8000/index.html`.
 
 1. In `app.js` (and `frontend/app.js`), set your Render URL on line 12:
    ```javascript
-   const RENDER_BACKEND_URL = "https://your-render-url.onrender.com";
+   const RENDER_BACKEND_URL = "https://house-price-prediction-2h2l.onrender.com";
    ```
 2. Commit and push the change to GitHub:
    ```bash
